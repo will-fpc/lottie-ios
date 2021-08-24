@@ -98,14 +98,12 @@ extension KeypathSearchable {
       return nil
     }
     
-    if nextKeypath.nextKeypath != nil {
       /// Now check child keypaths.
       for child in childKeypaths {
-        if let layer = child.layer(for: keyPath) {
+        if let layer = child.layer(for: nextKeypath) {
           return layer
         }
       }
-    }
     return nil
   }
   
